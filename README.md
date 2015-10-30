@@ -1,7 +1,6 @@
-# Workshop Three.js - Equalizer - Gobelins 2015
+# Burn - Three js experiment
 
-Three.js Workshop during one week. 
-The goal : create a 3D world bind on music's data.
+A little experiment with burn effect for Codevember
 
 ## INSTALL
 
@@ -14,12 +13,6 @@ npm install
 ```shell
 gulp server
 ```
-
-## TO DO 
-
-~~Select quality : ( antialias : true/false + sphere shape + postprocessings numbers)~~
-~~Screencast and mobile fallback~~
-
 
 ### FRONT-END LANGUAGES
 
