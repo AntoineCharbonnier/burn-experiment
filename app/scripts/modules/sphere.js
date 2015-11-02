@@ -22,26 +22,11 @@ class Sphere {
         shading: THREE.SmoothShading,
         wireframe: false,
         transparent: true,
-        // side: THREE.DoubleSide
       } 
     );
 
-    // torus params
-    // this.radius          = 10
-    // this.tube            = 3
-    // this.radialSegments  = 64
-    // this.tubularSegments = 8
-    // this.p               = 2
-    // this.q               = 3
-    // this.heightScale     = 1
-
-    this.meshGeometry = new THREE.CylinderGeometry(1, 0, 1, 32, 32, true, 0)
-    
-    // this.meshGeometry = new THREE.TorusKnotGeometry( this.radius, this.tube, this.radialSegments, this.tubularSegments, this.p, this.q, this.heightScale );
-    
+    this.meshGeometry = new THREE.CylinderGeometry(1, 0, 1, 32, 32, true, 0)    
     this.mesh = new THREE.Object3D()
-
-
 
     this.mesh.add( new THREE.Mesh(
       this.meshGeometry,
@@ -52,7 +37,6 @@ class Sphere {
     this.mesh.rotation.y = -11;
     this.mesh.position.z = -3;
     this.mesh.rotation.z = -Math.PI / 2
-    
 
     this.data = {
       radius : 10,

@@ -46,7 +46,6 @@ class World {
         antialias: true
     });
 
-
   	this.renderer.setSize( this.params.width, this.params.height )
 
   	this.container.appendChild( this.renderer.domElement )
@@ -54,8 +53,6 @@ class World {
   	this.clock = Date.now()
 
     this.addSphere()
-    // this.addTerrain()
-    
 
     this.addListeners()
   	
@@ -86,11 +83,6 @@ class World {
   	this.scene.add( this.sphere.getMesh() )
   }
 
-  // addTerrain() {
-  //   this.terrain = new Terrain()
-  //   this.scene.add( this.terrain.getMesh() )
-  // }
-  
   getScene() {
     return this.scene;
   }
@@ -100,7 +92,6 @@ class World {
       window.requestAnimationFrame( this.animate.bind(this) );
       this.render( ts );
       this.sphere.update(ts);
-      // this.terrain.update(ts);
     }
   }
 
@@ -114,8 +105,6 @@ class World {
     this.sphere    = null;
   }
 
-
-
   render() {
     if (!this.params.active)
         this.params.active = true;
@@ -126,7 +115,6 @@ class World {
   	window.addEventListener( 'resize', this.onWindowResize.bind( this ), false );
   	this.keyboard = new Keyboard();	
     this.keyboard.addObject( this.sphere.getMesh() );
-    // this.keyboard.addObject( this.terrain.getMesh() );
   }
 
   onWindowResize() {
@@ -137,7 +125,6 @@ class World {
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize( this.params.width, this.params.height );
-    // this.composer.setSize( this.params.width, this.params.height );
   }
 
 }
