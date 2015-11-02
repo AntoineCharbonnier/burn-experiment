@@ -27,18 +27,15 @@ class Sphere {
     );
 
     // torus params
-    this.radius          = 10
-    this.tube            = 3
-    this.radialSegments  = 64
-    this.tubularSegments = 8
-    this.p               = 2
-    this.q               = 3
-    this.heightScale     = 1
+    // this.radius          = 10
+    // this.tube            = 3
+    // this.radialSegments  = 64
+    // this.tubularSegments = 8
+    // this.p               = 2
+    // this.q               = 3
+    // this.heightScale     = 1
 
-
-    // this.meshGeometry = new THREE.DodecahedronGeometry( 20, 1 );
     this.meshGeometry = new THREE.CylinderGeometry(1, 0, 1, 32, 32, true, 0)
-    // this.meshGeometry = new THREE.PlaneGeometry(10, 10, 100, 100)
     
     // this.meshGeometry = new THREE.TorusKnotGeometry( this.radius, this.tube, this.radialSegments, this.tubularSegments, this.p, this.q, this.heightScale );
     
@@ -51,13 +48,6 @@ class Sphere {
       this.meshMaterial
     ));
 
-    // this.mesh.position.z = -104;
-    // this.mesh.position.y = 18;
-    // this.mesh.position.z = -30;
-    // this.mesh.position.y = 4;
-    // this.mesh.rotation.x = -8
-    // this.mesh.position.z = -500;
-    // this.mesh.position.z = -20;
     this.mesh.position.y = 0;
     this.mesh.rotation.y = -11;
     this.mesh.position.z = -3;
@@ -73,23 +63,6 @@ class Sphere {
       q : 3,
       heightScale : 1
     };
-
-
-    // GUI settings
-    // var gui = new dat.GUI();
-
-    // var folder = gui.addFolder('THREE.TorusGeometry');
-
-    // folder.add( this.data, 'radius', 1, 20 ).onChange( this.generateGeometry )
-    // folder.add( this.data, 'tube', 0.1, 10 ).onChange( this.generateGeometry )
-    // folder.add( this.data, 'radialSegments', 3, 300 ).step(1).onChange( this.generateGeometry )
-    // folder.add( this.data, 'tubularSegments', 3, 20 ).step(1).onChange( this.generateGeometry )
-    // folder.add( this.data, 'p', 1, 20 ).step(1).onChange( this.generateGeometry )
-    // folder.add( this.data, 'q', 1, 20 ).step(1).onChange( this.generateGeometry )
-    // folder.add( this.data, 'heightScale', 1, 20 ).onChange( this.generateGeometry )
-
-    // this.generateGeometry()
-    
     this.clock           = Date.now();
     
     this.speed           = 0.0003;
@@ -107,28 +80,9 @@ class Sphere {
     return this;
   }
 
-
-  generateGeometry() {
-    console.log(this.data)
-    this.updateGroupGeometry( this.mesh,
-      new THREE.TorusKnotGeometry(
-          this.data.radius, this.data.tube, this.data.radialSegments, this.data.tubularSegments,
-          this.data.p, this.data.q, this.data.heightScale
-      )
-    )
-  }
-
-  updateGroupGeometry( mesh, geometry ) {
-    mesh.children[0].geometry.dispose();
-    mesh.children[0].geometry = geometry;
-    //these do not update nicely together if shared
-  }
-
-
   update( ts ) {
-    this.meshMaterial.uniforms[ 'time' ].value        = this.speed * ( Date.now() - this.clock );
+    this.meshMaterial.uniforms[ 'time' ].value = this.speed * ( Date.now() - this.clock );
   }
-
 
   setWeight( _weight ) {
     this.weight = _weight;

@@ -1,6 +1,5 @@
 import { Keyboard }  from './keyboard';
 import { Sphere }    from './sphere';
-import { Terrain }   from './terrain';
 
 class World {
 
@@ -87,10 +86,10 @@ class World {
   	this.scene.add( this.sphere.getMesh() )
   }
 
-  addTerrain() {
-    this.terrain = new Terrain()
-    this.scene.add( this.terrain.getMesh() )
-  }
+  // addTerrain() {
+  //   this.terrain = new Terrain()
+  //   this.scene.add( this.terrain.getMesh() )
+  // }
   
   getScene() {
     return this.scene;
