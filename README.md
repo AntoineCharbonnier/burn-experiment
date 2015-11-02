@@ -2,6 +2,8 @@
 
 A little experiment with burn effect for Codevember
 
+[CodePen](http://codepen.io/AntoineCharbonnier/pen/GpBJEw)
+
 ## INSTALL
 
 ```shell
